@@ -38,12 +38,12 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
     public JSONArray rooms_available;
     private Context context;
     private int userFromId;
-    private LocalDate date;
+    private String date;
 
     public MakeReservationsAdapter(){
 
     }
-    public MakeReservationsAdapter(JSONArray rooms_available, Context context, int userFromId, LocalDate date){
+    public MakeReservationsAdapter(JSONArray rooms_available, Context context, int userFromId, String date){
         this.rooms_available = rooms_available;
         this.context = context;
         this.userFromId = userFromId;
@@ -84,12 +84,11 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void makeReservation(int roomID, LocalDate date, final int userFromId){
+    public void makeReservation(int roomID, String date, final int userFromId){
         //2. Build JSON Message
-        DateTimeFormatter stringformat = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         Map<String, String> message = new HashMap<String, String>();
         message.put("room", Integer.toString(roomID));
-        message.put("date", date.format(stringformat));
+        message.put("date", date);
         message.put("user", Integer.toString(userFromId));
         JSONObject jsonMessage = new JSONObject(message);
 

@@ -17,20 +17,6 @@
         android:orientation="horizontal">
 
     </LinearLayout>
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="CS2B01 - Chat"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="201910277 - Joaquin Ramirez"/>
-    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -34,7 +34,7 @@ public class LoginActivity extends AppCompatActivity {
     public void showMessage(String message){
         Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
-    public void goContactsActivity(String username, int id){
+    public void goMainReservations(String username, int id){
         Intent intent = new Intent(this, MainReservations.class);
         intent.putExtra("username", username);
         intent.putExtra("id", id);
@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity {
                         try {
                             String username = response.getString("username");
                             int id = response.getInt("id");
-                            goContactsActivity(username, id);
+                            goMainReservations(username, id);
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }

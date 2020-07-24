@@ -25,20 +25,25 @@ import java.util.Map;
 
 public class MainReservations extends AppCompatActivity {
 
+    int user;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        int user_id = getIntent().getExtras().getInt("id");
         setContentView(R.layout.activity_main_reservations);
+        user = user_id;
     }
 
-    public void goMakeReservations(View view){
+    public void goSelectDay(View view){
         //TODO Implement Login
-        Intent intent = new Intent(this, MakeReservations.class);
+        Intent intent = new Intent(this, SelectDayActivity.class);
+        intent.putExtra("user", user);
         startActivity(intent);
     }
     public void goMyReservations(View view){
         //TODO Implement Login
         Intent intent = new Intent(this, MyReservations.class);
+        intent.putExtra("user", user);
         startActivity(intent);
     }
 }
