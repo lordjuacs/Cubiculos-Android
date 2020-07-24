@@ -63,6 +63,7 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
     }
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        System.out.print("Hola. ");
         try {
             final JSONObject room = rooms_available.getJSONObject(position);
             String roomName = room.getString("room");
@@ -71,7 +72,6 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
                 holder.roomName.setText(roomName);
                 holder.roomTime.setText(roomTime);
                 holder.container.setOnClickListener(new View.OnClickListener() {
-                    @RequiresApi(api = Build.VERSION_CODES.O)
                     @Override
                     public void onClick(View view) {
                         makeReservation(roomID, date, userFromId);
@@ -83,7 +83,6 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
 
     }
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     public void makeReservation(int roomID, String date, final int userFromId){
         //2. Build JSON Message
         Map<String, String> message = new HashMap<String, String>();
