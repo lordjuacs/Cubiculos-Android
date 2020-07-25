@@ -15,6 +15,7 @@
         <LinearLayout
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:background="@drawable/user"
             android:orientation="horizontal">
 
         </LinearLayout>
@@ -26,11 +27,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="CS2B01 - Chat"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="201910277 - Joaquin Ramirez"/>
+                android:text="Cubículos"/>
         </LinearLayout>
 
         <LinearLayout
@@ -60,6 +57,22 @@
                 android:text="Lastname"/>
             <EditText
                 android:id="@+id/txtFullname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:ems="10"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="StudentID"/>
+            <EditText
+                android:id="@+id/txtStudentID"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:ems="10"/>

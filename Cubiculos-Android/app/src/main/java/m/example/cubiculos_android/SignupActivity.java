@@ -44,10 +44,12 @@ public class SignupActivity extends AppCompatActivity {
         EditText txtPassword = (EditText)findViewById(R.id.txtPassword);
         EditText txtName = (EditText)findViewById(R.id.txtName);
         EditText txtFullname = (EditText)findViewById(R.id.txtFullname);
+        EditText txtStudentID = (EditText)findViewById(R.id.txtStudentID);
         String username = txtUsername.getText().toString();
         String password = txtPassword.getText().toString();
         String name = txtUsername.getText().toString();
         String fullname = txtPassword.getText().toString();
+        String studentID = txtPassword.getText().toString();
 
         //2. Build JSON Message
         // {"username": "jramirez", "password": "1234"}
@@ -55,6 +57,7 @@ public class SignupActivity extends AppCompatActivity {
         message.put("username", username);
         message.put("password", password);
         message.put("name",  name);
+        message.put("studentID",  studentID);
         message.put("fullname", fullname);
 
         JSONObject jsonMessage = new JSONObject(message);

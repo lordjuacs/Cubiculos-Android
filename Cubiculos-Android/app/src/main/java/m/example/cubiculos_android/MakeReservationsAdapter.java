@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -39,9 +40,11 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
 
     public MakeReservationsAdapter(){}
 
-    public void goMainReservations(){
+    public void goMainReservations(String room, String date, int user){
         Intent intent = new Intent(this.context, MainReservations.class);
-        intent.putExtra("user", user);
+        intent.putExtra("date", date);
+        intent.putExtra("room", room);
+        intent.putExtra("userID", room);
         this.context.startActivity(intent);
     }
 
@@ -71,7 +74,7 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
             e.printStackTrace();
         }
     }
-    public void makeReservation(int room_id, String res_date, final int user){
+    public void makeReservation(int room_id, final String res_date, final int user){
         //2. Build JSON Message
         Map<String, String> message = new HashMap<String, String>();
         message.put("room", Integer.toString(room_id));
@@ -87,7 +90,11 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
                     @Override
                     public void onResponse(JSONObject response) {
                         //TODO when OK Response
-                        goMainReservations();
+                        try {
+                            goMainReservations(response.getString("room"), res_date,  user);
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
                     }
                 },
                 new Response.ErrorListener() {
@@ -115,6 +122,9 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
             container = itemView.findViewById(R.id.element_view_container);
         }
     }
+
+
+
 
 
 

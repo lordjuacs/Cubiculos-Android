@@ -15,6 +15,7 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SignupActivity" />
         <activity android:name=".MainReservations" />
+        <activity android:name=".InfoActivity" />
         <activity android:name=".MyReservations" />
         <activity android:name=".SelectDayActivity" />
         <activity android:name=".MainActivity">
