@@ -36,6 +36,7 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
         this.context = context;
         this.user = user;
         this.date = date;
+        System.out.println(this.user);
     }
 
     public MakeReservationsAdapter(){}
@@ -44,7 +45,7 @@ public class MakeReservationsAdapter extends RecyclerView.Adapter<MakeReservatio
         Intent intent = new Intent(this.context, MainReservations.class);
         intent.putExtra("date", date);
         intent.putExtra("room", room);
-        intent.putExtra("userID", room);
+        intent.putExtra("id", user);
         this.context.startActivity(intent);
     }
 

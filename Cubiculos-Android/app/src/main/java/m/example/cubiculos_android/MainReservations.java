@@ -34,12 +34,10 @@ public class MainReservations extends AppCompatActivity {
         int user_id = getIntent().getExtras().getInt("id");
         setContentView(R.layout.activity_main_reservations);
         user = user_id;
-
+        System.out.println(user);
         String room = getIntent().getExtras().getString("room");
         String date = getIntent().getExtras().getString("date");
-        int USER = getIntent().getExtras().getInt("userID");
         if(room != null && date != null){
-            user = USER;
             Toast.makeText(this, "Reservation created for " + date + " at " + room + "!",Toast.LENGTH_SHORT).show();
         }
 

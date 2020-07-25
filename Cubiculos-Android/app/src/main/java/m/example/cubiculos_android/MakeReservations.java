@@ -38,6 +38,7 @@ public class MakeReservations  extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_make_reservations);
         this.user = getIntent().getExtras().getInt("user");
+        System.out.println(user);
         time = getIntent().getExtras().getString("time");
         date = getIntent().getExtras().getString("date");
         mRecyclerView = findViewById(R.id.make_reservations_recycler_view);

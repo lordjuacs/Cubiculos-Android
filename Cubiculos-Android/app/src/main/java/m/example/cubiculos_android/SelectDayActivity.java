@@ -40,6 +40,7 @@ public class SelectDayActivity extends AppCompatActivity implements AdapterView.
         mDisplayDate = (TextView) findViewById(R.id.tvDate);
         Spinner spinner = findViewById(R.id.times_spinner);
         user = getIntent().getExtras().getInt("user");
+        System.out.println(user);
         //ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.times, android.R.layout.simple_spinner_item);
         //adapter.SetDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner.setOnItemSelectedListener(this);
